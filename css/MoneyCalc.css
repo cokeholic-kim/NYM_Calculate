@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {margin: 0; padding: 0; box-sizing: border-box; color: #fff;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+body {
+    color: var(--color-black);
+    font-family: 'NEXON Lv1 Gothic OTF';
+    width: 100%;
+    margin: 0 auto;
+}
+/* 기본 css */
+article{
+    /* background-color: black; */
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (prefers-color-scheme: dark) {article{background-color: black;} }
+.dark article{background-color: black;}
+@media (prefers-color-scheme: light) {article{background-color: white;} }
+.light article{background-color: white;}
+article .calcBody{
+    background-color: #5E5E5E;
+    max-width: 500px;
+    width: 40%;
+    height:80vh;
+    border-radius: 20px;
+    overflow: hidden;
+}
+@media ( max-width: 800px ) {article .calcBody {width:100%;max-width: 800px;height: 100vh;}}
+@media (prefers-color-scheme: light) {article .calcBody{border:3px solid #333} }
+.light article .calcBody{border:3px solid #333}
+.calcBody .calc{
+    width: 100%;
+    height: 25%;
+    font-family: DotGothic16;
+    font-size: 2em;
+    padding: 0.25em;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    color: #555555;
+    box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,.25);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.calcBody li{
+    border: 1px solid #555555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#929292; */
+    box-shadow: 1px 3px 15px -8px rgba(0,0,0,0.5); /* 버튼 입체 그림자 효과 */
+}
+@media (prefers-color-scheme: dark) {.calcBody li{background-color:#929292;color: white;} }
+.dark .calcBody li{background-color:#929292;color:white}
+@media (prefers-color-scheme: light) {.calcBody li{background-color: #D6D8D7; color:#333} }
+.light .calcBody li{background-color: #D6D8D7; color:#333}
+
+.light .calcBody li:nth-child(-n+13).active{
+    box-shadow: none;
+    background-color: #bcbcbc;
+}
+.light .calcBody li:nth-child(n+14):nth-child(-n+17).active{
+    box-shadow: none;
+    background-color: #4886a0;
+}
+.dark .calcBody li:nth-child(-n+13).active{
+    box-shadow: none;
+    background-color: #bcbcbc;
+}
+.dark .calcBody li:nth-child(n+14):nth-child(-n+17).active{
+    box-shadow: none;
+    background-color: #e0861f;
+}
+.buttons{ 
+    padding: 20px;
+    height:75%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap:20px;
+    grid-template-areas: 
+    "buttonsC buttonsAC buttonsDivide buttonsTimes"
+    "buttons7 buttons8 buttons9 buttonsMinus"
+    "buttons4 buttons5 buttons6 buttonsPlus"
+    "buttons1 buttons2 buttons3 buttonsEq"
+    "buttons0 buttons0 buttonMode ."
+    ;
+}
+/* button 영역정의 */
+    .calcBody .buttons1{
+        grid-area:buttons1;
+    }
+    .calcBody .buttons2{
+        grid-area:buttons2;
+    }
+    .calcBody .buttons3{
+        grid-area:buttons3;
+    }
+    .calcBody .buttons4{
+        grid-area:buttons4;
+    }
+    .calcBody .buttons5{
+        grid-area:buttons5;
+    }
+    .calcBody .buttons6{
+        grid-area:buttons6;
+    }
+    .calcBody .buttons7{
+        grid-area:buttons7;
+    }
+    .calcBody .buttons8{
+        grid-area:buttons8;
+    }
+    .calcBody .buttons9{
+        grid-area:buttons9;
+    }
+    .calcBody .buttons0{
+        grid-area:buttons0;
+        border-radius: 20px !important ;
+    }
+    .calcBody .buttonsAC{
+        grid-area:buttonsAC;
+    }
+    .calcBody.buttonsC{
+        grid-area:buttonsC;
+    }
+    .calcBody .buttonsPlus{
+        grid-area:buttonsPlus;
+        /* background-color: #FF9A23; */
+    }
+    .calcBody .buttonsMinus{
+        grid-area:buttonsMinus;
+        /* background-color: #FF9A23; */
+    }
+    .calcBody .buttonsDivide{
+        grid-area:buttonsDivide;
+    }
+    .calcBody .buttonsTimes{
+        grid-area:buttonsTimes;
+        /* background-color: #FF9A23; */
+    }
+    .calcBody .buttonsEq{
+        grid-area:buttonsEq;
+        /* background-color: #FF9A23; */
+    }
+    .calcBody .buttonMode{
+        grid-area:buttonMode;
+        /* background-color: black; */
+    }
+    /* 라이트모드 버튼 */
+    .light .calcBody .buttonMode{background-color: white; color:#333}
+    .light .calcBody .buttonsPlus{background-color: #539FC2;}
+    .light .calcBody .buttonsMinus{background-color: #539FC2;}
+    .light .calcBody .buttonsTimes{background-color: #539FC2;}
+    .light .calcBody .buttonsEq{background-color: #539FC2;}
+    @media (prefers-color-scheme: light) {
+        .calcBody .buttonMode{background-color: white; color:#333} 
+        .calcBody .buttonsPlus{background-color: #539FC2;}
+        .calcBody .buttonsMinus{background-color: #539FC2;}
+        .calcBody .buttonsTimes{background-color: #539FC2;}
+        .calcBody .buttonsEq{background-color: #539FC2;}
+    }
+    /* 다크모드 버튼 */
+    .dark .calcBody .buttonsPlus{background-color: #FF9A23;}
+    .dark .calcBody .buttonsMinus{background-color: #FF9A23;}
+    .dark .calcBody .buttonsTimes{background-color: #FF9A23;}
+    .dark .calcBody .buttonsEq{background-color: #FF9A23;}
+    .dark .calcBody .buttonMode{background-color: black;color:white}
+    @media (prefers-color-scheme: dark) {
+        .calcBody .buttonsPlus{background-color: #FF9A23;}
+        .calcBody .buttonsMinus{background-color: #FF9A23;}
+        .calcBody .buttonsTimes{background-color: #FF9A23;}
+        .calcBody .buttonsEq{background-color: #FF9A23;}
+        .calcBody .buttonMode{background-color: black;color:white}
+    }
+/* 버튼영역 정의 끝 */
+
+
+/* @media (prefers-color-scheme: dark) {
+    
+}
+@media (prefers-color-scheme: dark) {
+    
+} */
